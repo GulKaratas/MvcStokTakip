@@ -17,5 +17,17 @@ namespace MvcStokTakip.Controllers
 
             return View(urunler);
         }
+        [HttpGet]
+        public ActionResult YeniUrun()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniUrun(TBLURUNLER urunler)
+        {
+            db.TBLURUNLER.Add(urunler);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

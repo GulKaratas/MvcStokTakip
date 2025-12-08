@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">Yeni Ürün Ekle</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="URUNAD" class="form-label fw-bold">Ürün Adı</label>
+                            <input type="text" class="form-control form-control-lg" id="URUNAD" name="URUNAD" placeholder="Ürün Adını Giriniz" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="MARKA" class="form-label fw-bold">Marka İsmini Giriniz</label>
+                            <input type="text" class="form-control form-control-lg" id="MARKA" name="MARKA" placeholder="Marka İsmini Giriniz" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="URUNKATEGORİ" class="form-label fw-bold">Ürün Kategorisini Giriniz</label>
+                            <input type="text" class="form-control form-control-lg" id="URUNKATEGORİ" name="URUNKATEGORİ" placeholder="Ürün Kategorisini Giriniz" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="FIYAT" class="form-label fw-bold">Ürün Fiyatını Giriniz</label>
+                            <input type="text" class="form-control form-control-lg" id="FIYAT" name="FIYAT" placeholder="Ürün Fiyatını Giriniz" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="STOK" class="form-label fw-bold">Ürün Stoğunu Giriniz</label>
+                            <input type="text" class="form-control form-control-lg" id="STOK" name="STOK" placeholder="Ürün Stoğunu Giriniz" required />
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="/Urunler/Index" class="btn btn-secondary me-md-2">Geri Dön</a>
+                            <button type="submit" class="btn btn-dark btn-lg">
+                                <i class="bi bi-plus-circle"></i>Ürün Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
