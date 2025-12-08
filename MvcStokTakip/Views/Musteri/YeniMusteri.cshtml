@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">Yeni Müşteri Ekle</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="MUSTERIAD" class="form-label fw-bold">Müşteri Adı</label>
+                            <input type="text" class="form-control form-control-lg" id="MUSTERIAD" name="MUSTERIAD" placeholder="Müşteri adını giriniz" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="MUSTERISOYAD" class="form-label fw-bold">Müşteri Soyadı</label>
+                            <input type="text" class="form-control form-control-lg" id="MUSTERISOYAD" name="MUSTERISOYAD" placeholder="Müşteri soyadını giriniz" required />
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="/Musteri/Index" class="btn btn-secondary me-md-2">Geri Dön</a>
+                            <button type="submit" class="btn btn-dark btn-lg">
+                                <i class="bi bi-plus-circle"></i>Müşteri Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
