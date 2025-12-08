@@ -1,0 +1,53 @@
+﻿@using MvcStokTakip.Models.Entity;
+@model List<TBLURUNLER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Ürün Listesi</h2>
+    <a href="/Urunler/YeniUrun" class="btn btn-dark">
+        <i class="bi bi-plus-circle"></i> Yeni Ürün Ekle
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover align-middle shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Ürün ID</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Ürün Adı</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Marka</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Kategori</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px; text-align: right;">Fiyat</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px; text-align: center;">Stok</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px; text-align: center; width: 150px;">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.URUNID</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px; font-weight: 500;">@urun.URUNAD</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.MARKA</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.URUNKATEGORİ</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px; text-align: right; font-weight: 600;">@urun.FIYAT ₺</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px; text-align: center;">
+                        <span class="badge @(urun.STOK > 10 ? "bg-success" : urun.STOK > 0 ? "bg-warning" : "bg-danger")">@urun.STOK</span>
+                    </td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">
+                        <div class="btn-group" role="group">
+                            <a href="/Urunler/Guncelle/@urun.URUNID" class="btn btn-sm btn-success me-1">Güncelle</a>
+                            <a href="/Urunler/Sil/@urun.URUNID" class="btn btn-sm btn-danger" onclick="return confirm('Bu ürünü silmek istediğinizden emin misiniz?');">Sil</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

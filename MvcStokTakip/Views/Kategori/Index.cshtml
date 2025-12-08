@@ -1,0 +1,43 @@
+﻿@using MvcStokTakip.Models.Entity
+@model List<TBLKATEGORILER>
+
+@{
+    ViewBag.Title = "Kategori Listesi";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Kategori Listesi</h2>
+    <a href="/Kategori/YeniKategoriler" class="btn btn-dark">
+        <i class="bi bi-plus-circle"></i> Yeni Kategori Ekle
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover align-middle shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Kategori ID</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Kategori Adı</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px; text-align: center; width: 150px;">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ktgr in Model)
+            {
+                <tr>
+                    <td style="border: 1px solid #dee2e6; padding: 12px;">@ktgr.KATEGORIID</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px; font-weight: 500;">@ktgr.KATEGORIAD</td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">
+                        <div class="btn-group" role="group">
+                            <a href="/Kategori/Guncelle/@ktgr.KATEGORIID" class="btn btn-sm btn-success me-1">Güncelle</a>
+                            <a href="/Kategori/Sil/@ktgr.KATEGORIID" class="btn btn-sm btn-danger" onclick="return confirm('Bu kategoriyi silmek istediğinizden emin misiniz?');">Sil</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

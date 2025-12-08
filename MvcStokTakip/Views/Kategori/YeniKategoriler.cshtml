@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "YeniKategoriler";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">Yeni Kategori Ekle</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="KATEGORIAD" class="form-label fw-bold">Kategori Adı</label>
+                            <input type="text" class="form-control form-control-lg" id="KATEGORIAD" name="KATEGORIAD" placeholder="Kategori adını giriniz" required />
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="/Kategori/Index" class="btn btn-secondary me-md-2">Geri Dön</a>
+                            <button type="submit" class="btn btn-dark btn-lg">
+                                <i class="bi bi-plus-circle"></i> Kategori Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
