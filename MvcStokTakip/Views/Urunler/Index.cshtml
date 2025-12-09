@@ -35,7 +35,7 @@
                     <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.URUNID</td>
                     <td style="border: 1px solid #dee2e6; padding: 12px; font-weight: 500;">@urun.URUNAD</td>
                     <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.MARKA</td>
-                    <td style="border: 1px solid #dee2e6; padding: 12px;">@urun.URUNKATEGORİ</td>
+                    <td style="border: 1px solid #dee2e6; padding: 12px;"> @(urun.TBLKATEGORILER != null ? urun.TBLKATEGORILER.KATEGORIAD : "Kategori Yok")</td>
                     <td style="border: 1px solid #dee2e6; padding: 12px; text-align: right; font-weight: 600;">@urun.FIYAT ₺</td>
                     <td style="border: 1px solid #dee2e6; padding: 12px; text-align: center;">
                         <span class="badge @(urun.STOK > 10 ? "bg-success" : urun.STOK > 0 ? "bg-warning" : "bg-danger")">@urun.STOK</span>

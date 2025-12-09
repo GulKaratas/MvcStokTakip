@@ -29,5 +29,39 @@ namespace MvcStokTakip.Controllers
             return View();
 
         }
+
+        public ActionResult Sil(int id)
+        {
+            var kategori = db.TBLKATEGORILER.Find(id);
+            db.TBLKATEGORILER.Remove(kategori);
+                        db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult KategoriGetir(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var kategori = db.TBLKATEGORILER.Find(id);
+            if (kategori == null)
+            {
+                return HttpNotFound();
+            }
+            return View("KategoriGetir", kategori);
+        }
+
+        [HttpPost]
+        public ActionResult Guncelle(TBLKATEGORILER kategoriler)
+        {
+            var kategori = db.TBLKATEGORILER.Find(kategoriler.KATEGORIID);
+            if (kategori == null)
+            {
+                return HttpNotFound();
+            }
+            kategori.KATEGORIAD = kategoriler.KATEGORIAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

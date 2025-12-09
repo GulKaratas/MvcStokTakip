@@ -15,17 +15,13 @@ namespace MvcStokTakip.Controllers
             var musteriler = db.TBLMUSTERILER.ToList();
             return View(musteriler);
         }
-        [HttpGet]
-        public ActionResult YeniMusteri()
+
+        public ActionResult Sil(int id)
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult YeniMusteri(TBLMUSTERILER musteriler)
-        {
-            db.TBLMUSTERILER.Add(musteriler);
-            db.SaveChanges();
-            return View();
+            var musteri = db.TBLMUSTERILER.Find(id);
+            db.TBLMUSTERILER.Remove(musteri);
+            db.SaveChanges();       
+            return RedirectToAction("Index");
         }
     }
 }

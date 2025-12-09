@@ -1,4 +1,5 @@
-﻿
+﻿@model MvcStokTakip.Models.Entity.TBLURUNLER
+
 @{
     ViewBag.Title = "YeniUrun";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -24,8 +25,8 @@
                             <input type="text" class="form-control form-control-lg" id="MARKA" name="MARKA" placeholder="Marka İsmini Giriniz" required />
                         </div>
                         <div class="mb-3">
-                            <label for="URUNKATEGORİ" class="form-label fw-bold">Ürün Kategorisini Giriniz</label>
-                            <input type="text" class="form-control form-control-lg" id="URUNKATEGORİ" name="URUNKATEGORİ" placeholder="Ürün Kategorisini Giriniz" required />
+                            <label for="URUNKATEGORİ" class="form-label fw-bold">Ürün Kategorisi</label>
+                            @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control form-control-lg", required = "required" })
                         </div>
                         <div class="mb-3">
                             <label for="FIYAT" class="form-label fw-bold">Ürün Fiyatını Giriniz</label>
@@ -47,4 +48,5 @@
         </div>
     </div>
 </div>
+
 

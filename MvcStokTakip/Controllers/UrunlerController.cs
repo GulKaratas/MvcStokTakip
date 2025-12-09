@@ -20,14 +20,31 @@ namespace MvcStokTakip.Controllers
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            List<SelectListItem> deger1 = (from i in db.TBLKATEGORILER.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = i.KATEGORIAD,
+                                              Value = i.KATEGORIID.ToString()
+                                          }).ToList();
+            ViewBag.dgr1 = deger1;
             return View();
         }
         [HttpPost]
         public ActionResult YeniUrun(TBLURUNLER urunler)
         {
+            var ktg = db.TBLKATEGORILER.Where(m => m.KATEGORIID == urunler.TBLKATEGORILER.KATEGORIID).FirstOrDefault();
+            urunler.TBLKATEGORILER = ktg;
             db.TBLURUNLER.Add(urunler);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Sil(int id)
+        {
+            var urun = db.TBLURUNLER.Find(id);
+            db.TBLURUNLER.Remove(urun);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
