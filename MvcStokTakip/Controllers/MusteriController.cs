@@ -31,11 +31,11 @@ namespace MvcStokTakip.Controllers
             var musteri = db.TBLMUSTERILER.Find(id);
             return View("MusteriGetir", musteri);
         }
-        public ActionResult Guncelle(TBLMUSTERILER musteri)
+        public ActionResult Guncelle(TBLMUSTERILER musteriler)
         { 
-            var musteriler = db.TBLMUSTERILER.Find(musteri.MUSTERIID);
-            musteriler.MUSTERIAD = musteri.MUSTERIAD;
-            musteriler.MUSTERISOYAD = musteri.MUSTERISOYAD; 
+            var musteri = db.TBLMUSTERILER.Find(musteriler.MUSTERIID);
+            musteri.MUSTERIAD = musteriler.MUSTERIAD;
+            musteri.MUSTERISOYAD = musteriler.MUSTERISOYAD; 
             db.SaveChanges();
             return RedirectToAction("Index");
         }
