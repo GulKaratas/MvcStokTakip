@@ -30,6 +30,13 @@ SQL Server
 Bootstrap
 
 HTML / CSS
-
 # 📸 Ekran Görüntüleri
-<p align="center"> <img src="./İmages/Ekran görüntüsü 2025-12-10 202113.png" alt="Image 1" width="250" /> <img src="./İmages/Ekran görüntüsü 2025-12-10 202125.png" alt="Image 2" width="250" /> <img src="./İmages/Ekran görüntüsü 2025-12-10 202147.png" alt="Image 3" width="250" /> </p>
+
+<p align="center">
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231909.png" width="250" />
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231638.png" width="250" />
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231749.png" width="250" />
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231713.png" width="250" />
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231702.png" width="250" />
+  <img src="./İmages/Ekran görüntüsü 2025-12-10 231758.png" width="250" />
+</p>
