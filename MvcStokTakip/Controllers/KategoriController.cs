@@ -24,6 +24,10 @@ namespace MvcStokTakip.Controllers
         [HttpPost]
         public ActionResult YeniKategoriler(TBLKATEGORILER kategoriler)
         {
+            if(!ModelState.IsValid)
+            {
+                return View("YeniKategoriler");
+            }
             db.TBLKATEGORILER.Add(kategoriler);
             db.SaveChanges();
             return View();
@@ -54,6 +58,7 @@ namespace MvcStokTakip.Controllers
         [HttpPost]
         public ActionResult Guncelle(TBLKATEGORILER kategoriler)
         {
+
             var kategori = db.TBLKATEGORILER.Find(kategoriler.KATEGORIID);
             if (kategori == null)
             {

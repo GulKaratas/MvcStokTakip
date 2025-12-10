@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MvcStokTakip.Models.Entity.TBLKATEGORILER
+
+@{
     ViewBag.Title = "YeniKategoriler";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
@@ -14,9 +16,14 @@
                 </div>
                 <div class="card-body">
                     <form method="post">
+                        @*<div class="mb-3">
+                                <label for="KATEGORIAD" class="form-label fw-bold">Kategori Adı</label>
+                                <input type="text" class="form-control form-control-lg" id="KATEGORIAD" name="KATEGORIAD" placeholder="Kategori adını giriniz" required />
+                            </div>*@
                         <div class="mb-3">
-                            <label for="KATEGORIAD" class="form-label fw-bold">Kategori Adı</label>
-                            <input type="text" class="form-control form-control-lg" id="KATEGORIAD" name="KATEGORIAD" placeholder="Kategori adını giriniz" required />
+                            <label>Kategori Adı</label>
+                            @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control form-control-lg", @placeholder = "Kategori adını giriniz", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.KATEGORIAD, "", new { @style = "color:red"})
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="/Kategori/Index" class="btn btn-secondary me-md-2">Geri Dön</a>

@@ -1,4 +1,44 @@
-﻿
+﻿@model MvcStokTakip.Models.Entity.TBLMUSTERILER
+
+@{
+    ViewBag.Title = "Yeni Müşteri Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">Yeni Müşteri Ekle</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Müşteri Adı</label>
+                            @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control form-control-lg", @placeholder = "Müşteri adını giriniz", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Müşteri Soyadı</label>
+                            @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control form-control-lg", @placeholder = "Müşteri soyadını giriniz", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.MUSTERISOYAD, "", new { @style = "color:red" })
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="/Musteri/Index" class="btn btn-secondary me-md-2">Geri Dön</a>
+                            <button type="submit" class="btn btn-dark btn-lg">
+                                <i class="bi bi-plus-circle"></i> Müşteri Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @{
     ViewBag.Title = "YeniMusteri";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
