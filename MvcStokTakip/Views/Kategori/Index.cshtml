@@ -1,6 +1,7 @@
 ﻿@using MvcStokTakip.Models.Entity
-@model List<TBLKATEGORILER>
-
+@model PagedList.IPagedList<TBLKATEGORILER>
+    @using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Kategori Listesi";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -40,4 +41,8 @@
             }
         </tbody>
     </table>
+</div>
+
+<div class="mt-4" style="display: flex; justify-content: flex-start;">
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new {sayfa}))
 </div>

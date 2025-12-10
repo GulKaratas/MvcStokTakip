@@ -9,12 +9,18 @@ namespace MvcStokTakip.Controllers
 {
     public class MusteriController : Controller
     {
+     
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string arananMusteri)
         {
-            var musteriler = db.TBLMUSTERILER.ToList();
-            return View(musteriler);
+            var degerler = from m in db.TBLMUSTERILER select m;
+            if(!string.IsNullOrEmpty(arananMusteri))
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(arananMusteri));
+            }
+            return View(degerler.ToList());
         }
+
 
         [HttpGet]
         public ActionResult YeniMusteri()

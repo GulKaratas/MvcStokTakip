@@ -66,9 +66,14 @@
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="/Musteri/Index" class="btn btn-secondary me-md-2">Geri Dön</a>
                             <button type="submit" class="btn btn-dark btn-lg">
-                                <i class="bi bi-plus-circle"></i>Müşteri Ekle
+                                <i class="bi bi-plus-circle" id="btn1"></i>Müşteri Ekle
                             </button>
                         </div>
+                        <script>
+                            $('#btn1').click(function () {
+                                alert("Müşteri ekleme işlemi yapıldı");
+                            })
+                        </script>
                     </form>
                 </div>
             </div>

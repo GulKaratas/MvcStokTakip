@@ -4,8 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
-<br />
+<div class="mb-3">
+    @using (Html.BeginForm("Index", "Musteri", FormMethod.Get, new { @class = "d-flex", @style = "gap: 10px;" }))
+    {
+        @Html.TextBox("arananMusteri", ViewBag.ArananMusteri as string, new { @class = "form-control", @placeholder = "Müşteri adı veya soyadı ara...", @style = "max-width: 300px;" })
+        <button type="submit" class="btn btn-dark">
+            <i class="bi bi-search"></i> Ara
+        </button>
+    }
+</div>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="mb-0">Müşteri Listesi</h2>
@@ -22,6 +29,8 @@
                 <th scope="col" style="border: 2px solid #212529; padding: 12px;">Müşteri Adı</th>
                 <th scope="col" style="border: 2px solid #212529; padding: 12px;">Müşteri Soyadı</th>
                 <th scope="col" style="border: 2px solid #212529; padding: 12px; text-align: center; width: 150px;">İşlemler</th>
+                <th scope="col" style="border: 2px solid #212529; padding: 12px;">Alert</th>
+
             </tr>
         </thead>
         <tbody>
@@ -36,6 +45,11 @@
                             <a href="/Musteri/MusteriGetir/@musteri.MUSTERIID" class="btn btn-sm btn-success me-1">Güncelle</a>
                             <a href="/Musteri/Sil/@musteri.MUSTERIID" class="btn btn-sm btn-danger" onclick="return confirm('Bu müşteriyi silmek istediğinizden emin misiniz?');">Sil</a>
                         </div>
+                    </td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">
+                        <button type="button" class="btn btn-sm btn-warning" onclick="alert('Müşteri: @musteri.MUSTERIAD @musteri.MUSTERISOYAD\nID: @musteri.MUSTERIID');">
+                            <i class="bi bi-bell"></i> Alert
+                        </button>
                     </td>
                 </tr>
             }
