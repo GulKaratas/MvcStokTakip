@@ -16,15 +16,14 @@ Bu proje, ASP.NET MVC ve C# kullanılarak geliştirilmiş bir stok, ürün, kate
 - Entity Framework – SQL Server bağlantısı
 - MVC (Model – View – Controller) mimarisi
 
-
 # 🛠 Kullanılan Teknolojiler
 
--ASP.NET MVC 5
--C#
--Entity Framework
--SQL Server
--Bootstrap
--HTML / CSS
+- ASP.NET MVC 5
+- C#
+- Entity Framework
+- SQL Server
+- Bootstrap
+- HTML / CSS
 
 # 📸 Ekran Görüntüleri
 
