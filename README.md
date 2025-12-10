@@ -19,17 +19,13 @@ Bu proje, ASP.NET MVC ve C# kullanılarak geliştirilmiş bir stok, ürün, kate
 
 # 🛠 Kullanılan Teknolojiler
 
-ASP.NET MVC 5
+-ASP.NET MVC 5
+-C#
+-Entity Framework
+-SQL Server
+-Bootstrap
+-HTML / CSS
 
-C#
-
-Entity Framework
-
-SQL Server
-
-Bootstrap
-
-HTML / CSS
 # 📸 Ekran Görüntüleri
 
 <p align="center">
