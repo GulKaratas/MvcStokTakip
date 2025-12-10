@@ -1,23 +1,19 @@
 # 📦 MVC Stok Takip Uygulaması
 
-Bu proje, ASP.NET MVC ve C# kullanılarak geliştirilmiş bir stok, ürün ve kategori yönetim sistemidir.
-Ürün, kategori ve müşteri tabloları üzerinde CRUD işlemleri, ayrıca validasyon, sayfalama (pagination) ve
-SQL Server veritabanı entegrasyonu bulunmaktadır.
+Bu proje, ASP.NET MVC ve C# kullanılarak geliştirilmiş bir stok, ürün, kategori ve müşteri yönetim sistemidir.
+Ürün, kategori, müşteri ve satış tabloları üzerinde CRUD işlemleri yapılabilmekte; validasyon, sayfalama (pagination), popup bildirimleri ve gelişmiş arama özellikleri bulunmaktadır.
 
-# 🚀 Özellikler
+# 🚀Özellikler
 
 ✔️ Kategori Ekle / Sil / Güncelle
-
 ✔️ Ürün Ekle / Sil / Güncelle
-
 ✔️ Müşteri Yönetimi
-
+✔️ Satış Sayfası için Popup Bildirim (başarılı işlem sonrası açılan modal/popup)
+✔️ Müşteri Sayfasında Arama Özelliği (isim veya şehre göre filtreleme)
+✔️ Müşteri Sayfasında Alert Bildirimi (ekleme/silme/güncelleme sonrası uyarı mesajı)
 ✔️ Model Validasyonları
-
 ✔️ Sayfalama (Pagination)
-
 ✔️ Entity Framework – SQL Server bağlantısı
-
 ✔️ MVC (Model – View – Controller) mimarisi
 
 # 🛠 Kullanılan Teknolojiler
