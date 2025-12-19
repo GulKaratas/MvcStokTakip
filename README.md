@@ -23,7 +23,7 @@ Bu proje, ASP.NET MVC ve C# kullanılarak geliştirilmiş bir stok, ürün, kate
 - Entity Framework
 - SQL Server
 - Bootstrap
-- HTML / CSS
+- HTML/ CSS
 
 # 📸 Ekran Görüntüleri
 
